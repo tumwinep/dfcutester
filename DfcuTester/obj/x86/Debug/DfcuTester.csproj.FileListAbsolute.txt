@@ -1,0 +1,41 @@
+C:\Users\jnakitende\Documents\Visual Studio 2010\Projects\final\DfcuTester\DfcuTester\bin\Debug\DfcuTester.exe.config
+C:\Users\jnakitende\Documents\Visual Studio 2010\Projects\final\DfcuTester\DfcuTester\bin\Debug\DfcuTester.exe
+C:\Users\jnakitende\Documents\Visual Studio 2010\Projects\final\DfcuTester\DfcuTester\bin\Debug\DfcuTester.pdb
+C:\Users\jnakitende\Documents\Visual Studio 2010\Projects\final\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.exe
+C:\Users\jnakitende\Documents\Visual Studio 2010\Projects\final\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.pdb
+C:\Users\jnakitende\Documents\Visual Studio 2010\Projects\final\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.csprojResolveAssemblyReference.cache
+C:\Users\pamwine\Desktop\API\DfcuTester\DfcuTester\bin\Debug\DfcuTester.exe
+C:\Users\pamwine\Desktop\API\DfcuTester\DfcuTester\bin\Debug\DfcuTester.exe.config
+C:\Users\pamwine\Desktop\API\DfcuTester\DfcuTester\bin\Debug\DfcuTester.pdb
+C:\Users\pamwine\Desktop\API\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.exe
+C:\Users\pamwine\Desktop\API\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.pdb
+D:\Ampa\Work\Finacle\F10\BT DEV\API\DfcuTester\DfcuTester\bin\Debug\DfcuTester.exe
+D:\Ampa\Work\Finacle\F10\BT DEV\API\DfcuTester\DfcuTester\bin\Debug\DfcuTester.exe.config
+D:\Ampa\Work\Finacle\F10\BT DEV\API\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.exe
+D:\Ampa\Work\Finacle\F10\BT DEV\API\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.pdb
+D:\Ampa\Work\Finacle\F10\BT DEV\API\DfcuTester\DfcuTester\bin\Debug\DfcuTester.pdb
+C:\Users\pamwine.DFCUGROUP\Desktop\API\DfcuTester\DfcuTester\bin\Debug\DfcuTester.exe.config
+C:\Users\pamwine.DFCUGROUP\Desktop\API\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.exe
+C:\Users\pamwine.DFCUGROUP\Desktop\API\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.pdb
+C:\Users\pamwine.DFCUGROUP\Desktop\API\DfcuTester\DfcuTester\bin\Debug\DfcuTester.exe
+C:\Users\pamwine.DFCUGROUP\Desktop\API\DfcuTester\DfcuTester\bin\Debug\DfcuTester.pdb
+C:\Users\pamwine.DFCUGROUP\Desktop\API\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.csprojResolveAssemblyReference.cache
+D:\Ampa\Work\Finacle\F10\BT DEV\API\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.csprojAssemblyReference.cache
+E:\25102019\DfcuTester\DfcuTester\bin\Debug\DfcuTester.exe.config
+E:\25102019\DfcuTester\DfcuTester\bin\Debug\DfcuTester.exe
+E:\25102019\DfcuTester\DfcuTester\bin\Debug\DfcuTester.pdb
+E:\25102019\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.csprojAssemblyReference.cache
+E:\25102019\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.exe
+E:\25102019\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.pdb
+D:\Ampa\Work\PDID\Dev\DfcuTester\DfcuTester\bin\Debug\DfcuTester.exe.config
+D:\Ampa\Work\PDID\Dev\DfcuTester\DfcuTester\bin\Debug\DfcuTester.exe
+D:\Ampa\Work\PDID\Dev\DfcuTester\DfcuTester\bin\Debug\DfcuTester.pdb
+D:\Ampa\Work\PDID\Dev\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.exe
+D:\Ampa\Work\PDID\Dev\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.pdb
+D:\Ampa\Work\PDID\Dev\DfcuTester\DfcuTester\obj\x86\Debug\DfcuTester.csprojAssemblyReference.cache
+D:\New_Work\Repos\dfcutester\DfcuTester\bin\Debug\DfcuTester.exe.config
+D:\New_Work\Repos\dfcutester\DfcuTester\bin\Debug\DfcuTester.exe
+D:\New_Work\Repos\dfcutester\DfcuTester\bin\Debug\DfcuTester.pdb
+D:\New_Work\Repos\dfcutester\DfcuTester\obj\x86\Debug\DfcuTester.csprojAssemblyReference.cache
+D:\New_Work\Repos\dfcutester\DfcuTester\obj\x86\Debug\DfcuTester.exe
+D:\New_Work\Repos\dfcutester\DfcuTester\obj\x86\Debug\DfcuTester.pdb

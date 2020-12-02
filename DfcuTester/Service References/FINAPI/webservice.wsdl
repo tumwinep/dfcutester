@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://dfcugroup.com/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://dfcugroup.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://dfcugroup.com/">
+      <s:element name="InquireUtility">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utilityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utilityArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InquireUtilityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InquireUtilityResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostUtilityTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utilityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="utilityArea" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="payreference" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="umemePayType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserve1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserve2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserve3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserve4" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="reserve5" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostUtilityTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostUtilityTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostIUIUTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="utilityCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="studyYear" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="semester" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custRef" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiUsername" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ApiPassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="custPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="payreference" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostIUIUTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostIUIUTransactionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InquireUtilitySoapIn">
+    <wsdl:part name="parameters" element="tns:InquireUtility" />
+  </wsdl:message>
+  <wsdl:message name="InquireUtilitySoapOut">
+    <wsdl:part name="parameters" element="tns:InquireUtilityResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostUtilityTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostUtilityTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostUtilityTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostUtilityTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostIUIUTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostIUIUTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostIUIUTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostIUIUTransactionResponse" />
+  </wsdl:message>
+  <wsdl:portType name="webserviceSoap">
+    <wsdl:operation name="InquireUtility">
+      <wsdl:input message="tns:InquireUtilitySoapIn" />
+      <wsdl:output message="tns:InquireUtilitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostUtilityTransaction">
+      <wsdl:input message="tns:PostUtilityTransactionSoapIn" />
+      <wsdl:output message="tns:PostUtilityTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostIUIUTransaction">
+      <wsdl:input message="tns:PostIUIUTransactionSoapIn" />
+      <wsdl:output message="tns:PostIUIUTransactionSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="webserviceSoap" type="tns:webserviceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InquireUtility">
+      <soap:operation soapAction="http://dfcugroup.com/InquireUtility" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostUtilityTransaction">
+      <soap:operation soapAction="http://dfcugroup.com/PostUtilityTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostIUIUTransaction">
+      <soap:operation soapAction="http://dfcugroup.com/PostIUIUTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="webserviceSoap12" type="tns:webserviceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InquireUtility">
+      <soap12:operation soapAction="http://dfcugroup.com/InquireUtility" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostUtilityTransaction">
+      <soap12:operation soapAction="http://dfcugroup.com/PostUtilityTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostIUIUTransaction">
+      <soap12:operation soapAction="http://dfcugroup.com/PostIUIUTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="webservice">
+    <wsdl:port name="webserviceSoap" binding="tns:webserviceSoap">
+      <soap:address location="http://localhost:18752/webservice.asmx" />
+    </wsdl:port>
+    <wsdl:port name="webserviceSoap12" binding="tns:webserviceSoap12">
+      <soap12:address location="http://localhost:18752/webservice.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

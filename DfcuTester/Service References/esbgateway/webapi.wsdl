@@ -1,0 +1,2528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.dfcugroup.com/s" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://datacontracts.multichoice.co.za/SelfCare" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s2="http://webservices.feesapp.jmsoft.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.dfcugroup.com/s" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.dfcugroup.com/s">
+      <s:import namespace="http://datacontracts.multichoice.co.za/SelfCare" />
+      <s:import namespace="http://webservices.feesapp.jmsoft.com/" />
+      <s:element name="CheckTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ValidchecktranStatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ValidchecktranStatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtran_refno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtranDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckTransactionResult" type="tns:ArrayOfTxnResultz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTxnResultz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TxnResultz" nillable="true" type="tns:TxnResultz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TxnResultz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requeststatus" type="tns:Requeststatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="umemeposttxnresult" type="tns:UmemePostTxnResult" />
+          <s:element minOccurs="0" maxOccurs="1" name="umemeprepaidtxnresult" type="tns:UmemePrepaidTxnResult" />
+          <s:element minOccurs="0" maxOccurs="1" name="uedclprepaidtxnresult" type="tns:UEDCLPrepaidTxnResult" />
+          <s:element minOccurs="0" maxOccurs="1" name="nwscposttxnresult" type="tns:NWSCPostTxnResult" />
+          <s:element minOccurs="0" maxOccurs="1" name="uraposposttxnresult" type="tns:URAPOSPostTxnResult" />
+          <s:element minOccurs="0" maxOccurs="1" name="schoolpaystudentranResponsedetails" type="tns:SchoolpaystudentTranResponsedetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="mukpostTxnResult" type="tns:MUKPostTxnResult" />
+          <s:element minOccurs="0" maxOccurs="1" name="agencybankdepositposttxnResult" type="tns:AgencyBankDepositPostTxnResult" />
+          <s:element minOccurs="0" maxOccurs="1" name="notifyiiuResponse" type="tns:NotifyiiuResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="SubmitPaymentResponse" type="tns:SubmitPaymentResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="pebuuNotifyResponse" type="tns:PebuuNotifyResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="pebuuChecktranstatusResponse" type="tns:PebuuChecktranstatusResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="uRAPostDetail" type="tns:URAPostDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Requeststatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="status_code" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UmemePostTxnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="successfulField" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postErrorField" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="successfulReceiptNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dfcutranref" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UmemePrepaidTxnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="lifeline" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="servicefee" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="payaccount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="remainingcredit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="debtrecovery" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="receiptnumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statusdescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statuscode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="meternumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="units" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tokenvalue" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="inflation" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fx" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fuel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="totalamount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="prepaidtoken" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dfcutranref" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UEDCLPrepaidTxnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TenderAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ServiceCharge" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tax" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Units" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="priceperunit" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="meterno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="metertype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statusDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dfcutranref" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NWSCPostTxnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="successful" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="postError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dfcutranref" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="URAPOSPostTxnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errormessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SchoolpaystudentTranResponsedetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="receiptNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="middleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="schoolCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="schoolName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="studentClass" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="returnCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="returnMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dfcutranref" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MUKPostTxnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgencyBankDepositPostTxnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="acct_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionid" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NotifyiiuResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ReceiptNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Names" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DefAmt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Exchange_Rate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Yr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SubmitPaymentResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="SubmitPayment" type="tns:SubmitPayment" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SubmitPayment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="AuditReferenceNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ErrorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="receiptNumber" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="transactionDateTime" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dfcutranref" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statuscode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PebuuNotifyResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="refid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param5" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PebuuChecktranstatusResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="refid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param6" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="URAPostDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Prn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dfcu_tranref" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckTransactionAB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ValidcheckABTranstatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ValidcheckABTranstatus">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtran_refno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtranDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAgentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CheckTransactionABResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckTransactionABResult" type="tns:ArrayOfTxnResultz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmABWithdrawalTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ValidcheckABTranstatus" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmABWithdrawalTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmABWithdrawalTransactionResult" type="tns:ArrayOfTxnResultz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ReverseTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ValidReversetran" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ValidReversetran">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtran_refno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dblAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtranDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAgentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ReverseTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ReverseTransactionResult" type="tns:ArrayOfRevTxnResultz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfRevTxnResultz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RevTxnResultz" nillable="true" type="tns:RevTxnResultz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RevTxnResultz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requeststatus" type="tns:Requeststatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="revtxnresult" type="tns:RevTxnResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RevTxnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="tranref" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtranDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidateCustomerDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="initialdetails" type="tns:ArrayOfValidcustReqz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValidcustReqz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidcustReqz" nillable="true" type="tns:ValidcustReqz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidcustReqz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="validcustNWSC" type="tns:ValidcustNWSC" />
+          <s:element minOccurs="0" maxOccurs="1" name="validcustUmemeUEDCL" type="tns:ValidcustUmemeUEDCL" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidcustUmemeUEDCLPostpaid" type="tns:ValidcustUmemeUEDCLPostpaid" />
+          <s:element minOccurs="0" maxOccurs="1" name="validposprn" type="tns:ValidPOSPRN" />
+          <s:element minOccurs="0" maxOccurs="1" name="validregcust" type="tns:ValidRegCust" />
+          <s:element minOccurs="0" maxOccurs="1" name="validchkcustlim" type="tns:Validchkcustlim" />
+          <s:element minOccurs="0" maxOccurs="1" name="validcustlalo" type="tns:Validcustlalo" />
+          <s:element minOccurs="0" maxOccurs="1" name="validpstlo" type="tns:ValidPstlo" />
+          <s:element minOccurs="0" maxOccurs="1" name="validkcca" type="tns:ValidKCCA" />
+          <s:element minOccurs="0" maxOccurs="1" name="validconfirmloanreq" type="tns:Validconfirmloanreq" />
+          <s:element minOccurs="0" maxOccurs="1" name="validgenericposprn" type="tns:ValidGenericPOSPRN" />
+          <s:element minOccurs="0" maxOccurs="1" name="validderegcust" type="tns:ValidDeRegCust" />
+          <s:element minOccurs="0" maxOccurs="1" name="validrepayloan" type="tns:ValidRepayLoan" />
+          <s:element minOccurs="0" maxOccurs="1" name="validschoolpaystudentquery" type="tns:ValidSchoolpayStudentQuery" />
+          <s:element minOccurs="0" maxOccurs="1" name="validcustdstv" type="tns:ValidcustDSTV" />
+          <s:element minOccurs="0" maxOccurs="1" name="validcustDSTVAvailablePdts" type="tns:ValidcustDSTVAvailablePdts" />
+          <s:element minOccurs="0" maxOccurs="1" name="validbalinq" type="tns:ValidBALINQ" />
+          <s:element minOccurs="0" maxOccurs="1" name="validdofundstransfer" type="tns:ValiddoFundsTransfer" />
+          <s:element minOccurs="0" maxOccurs="1" name="validzeepaystudent" type="tns:ValidZeepayStudent" />
+          <s:element minOccurs="0" maxOccurs="1" name="validMUKStudent" type="tns:ValidMUKStudent" />
+          <s:element minOccurs="0" maxOccurs="1" name="validStudentIIU" type="tns:ValidStudentIIU" />
+          <s:element minOccurs="0" maxOccurs="1" name="validPebuuAgent" type="tns:ValidPebuuAgent" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidcustNWSC">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustArea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidcustUmemeUEDCL">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidcustUmemeUEDCLPostpaid">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidPOSPRN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidRegCust">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strmobileno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Validchkcustlim">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Validcustlalo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strmobileno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidPstlo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strmobileno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="stramount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidKCCA">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Validconfirmloanreq">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="strloanid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidGenericPOSPRN">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtranid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpayername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtinno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpayamount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpaydate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtaxtype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strphone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidDeRegCust">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strmobileno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidRepayLoan">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strmobileno" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="stramount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtransactionref" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strcustacc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidSchoolpayStudentQuery">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strrequestid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="stramount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstudentpaymentcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidcustDSTV">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strProductType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidcustDSTVAvailablePdts">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strProductType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidBALINQ">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stracc_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValiddoFundsTransfer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stracc_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidZeepayStudent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidMUKStudent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidStudentIIU">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strprn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidPebuuAgent">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtxid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidateCustomerDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateCustomerDetailsResult" type="tns:ArrayOfCustomerDetailz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCustomerDetailz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="CustomerDetailz" nillable="true" type="tns:CustomerDetailz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustomerDetailz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requeststatus" type="tns:Requeststatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="umemecustomerprofile" type="tns:UmemeCustomerProfile" />
+          <s:element minOccurs="0" maxOccurs="1" name="nwsccustomerprofile" type="tns:NWSC_Customer" />
+          <s:element minOccurs="0" maxOccurs="1" name="uracustomerprofile" type="tns:URAPRNDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="uedclcustomerprofile" type="tns:UEDCLCustomerProfile" />
+          <s:element minOccurs="0" maxOccurs="1" name="kccaprndetails" type="tns:KCCAPRNDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="POSPaymentRegistrationDtlz" type="tns:POSPaymentRegistrationDtlz" />
+          <s:element minOccurs="0" maxOccurs="1" name="custregrespx" type="tns:CustRegRespx" />
+          <s:element minOccurs="0" maxOccurs="1" name="custchklimresp" type="tns:CustChkLimResp" />
+          <s:element minOccurs="0" maxOccurs="1" name="custlastloanresp" type="tns:CustLastLoanResp" />
+          <s:element minOccurs="0" maxOccurs="1" name="custpstloanresp" type="tns:CustPstLoanResp" />
+          <s:element minOccurs="0" maxOccurs="1" name="confirmloanresp" type="tns:ConfirmLoanResp" />
+          <s:element minOccurs="0" maxOccurs="1" name="registeredpaymenttransdtlz" type="tns:RegisteredPaymentTransDtlz" />
+          <s:element minOccurs="0" maxOccurs="1" name="repayloanresp" type="tns:RepayLoanResp" />
+          <s:element minOccurs="0" maxOccurs="1" name="schoolpaystudentqueryresponse" type="tns:ArrayOfSchoolpaystudentqueryResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="airtimepurchasedetail" type="tns:AirtimePurchaseDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="getbundlesperiodsdetail" type="tns:ArrayOfGetbundlesPeriodsDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="makpaystudentProfile" type="tns:MakpaystudentProfile" />
+          <s:element minOccurs="0" maxOccurs="1" name="nssfMobiPayQueryResponse" type="tns:NSSFMobiPayQueryResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="valiiuResponse" type="tns:ValiiuResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="DstvSmtQuoteRsp" type="s1:GetSmartQuoteResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="AvailableProduct" type="tns:ArrayOfAvailableProduct" />
+          <s:element minOccurs="0" maxOccurs="1" name="pebuuQueryResponse" type="tns:PebuuQueryResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UmemeCustomerProfile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="custRefNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="custRefName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="custType" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="outstandingBal" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="statuscode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="statusdescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="custErrorResult" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NWSC_Customer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="CustNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustArea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CurrBalance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustError" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustPropertyRef" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="URAPRNDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Prn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Tin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TaxpayerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentRegDt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpiryDt" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="UEDCLCustomerProfile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="MininumAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Area" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MeterNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="custErrorResult" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="KCCAPRNDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Prn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Coin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CityoperatorName" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="PrDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ExpiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="POSPaymentRegistrationDtlz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="amountToBePaid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="expiryDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="paymentRegDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="paymentRegNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="taxPayerName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="tin" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustRegRespx">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="success" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustChkLimResp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="success" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="customerlimit" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustLastLoanResp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="success" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastloan" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="CustPstLoanResp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="success" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LoanID" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="AmountRequested" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Charge" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="TotalAmount" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ConfirmLoanResp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="success" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Token" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Units" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentReference" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RegisteredPaymentTransDtlz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="errorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="paymentRegNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="searchCode" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RepayLoanResp">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="success" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="TransactionID" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfSchoolpaystudentqueryResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SchoolpaystudentqueryResponse" nillable="true" type="tns:SchoolpaystudentqueryResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SchoolpaystudentqueryResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="schoolpaystudentqueryresponsedetails" type="tns:SchoolpaystudentqueryResponsedetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="associatedfees" type="tns:ArrayOfAssociatedFees" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SchoolpaystudentqueryResponsedetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="dateOfBirth" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="firstName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="lastName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="middleName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="outstandingAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="paymentCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="registrationNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="schoolCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="schoolName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="studentClass" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="returnCode" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="returnMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="allowPartPayments" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="bankId" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAssociatedFees">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AssociatedFees" nillable="true" type="tns:AssociatedFees" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AssociatedFees">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="feeAmount" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="feeId" type="s:long" />
+          <s:element minOccurs="0" maxOccurs="1" name="feedescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="feeduefromtdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="feeduetodate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="feeldspecified" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AirtimePurchaseDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="responseId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfGetbundlesPeriodsDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GetbundlesPeriodsDetail" nillable="true" type="tns:GetbundlesPeriodsDetail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GetbundlesPeriodsDetail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="periodid" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MakpaystudentProfile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="StudentNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StudentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Balance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Course" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="School" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDescription" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NSSFMobiPayQueryResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="successful" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="error_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="payway_trno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValiiuResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Response" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PRN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ID_Number" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Created_On" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="response_code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="response_desc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAvailableProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AvailableProduct" nillable="true" type="s1:AvailableProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PebuuQueryResponse">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param1" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param2" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param3" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param4" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param5" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="param6" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostCustomerTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ArrayOfValidposttranz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValidposttranz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Validposttranz" nillable="true" type="tns:Validposttranz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Validposttranz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="validpostNWSCtran" type="tns:ValidpostNWSCTran" />
+          <s:element minOccurs="0" maxOccurs="1" name="validpostUmemeUEDCLtran" type="tns:ValidpostUmemeUEDCLTran" />
+          <s:element minOccurs="0" maxOccurs="1" name="validposturapostran" type="tns:ValidpostURAPOSTran" />
+          <s:element minOccurs="0" maxOccurs="1" name="validpostschoolpaytran" type="tns:ArrayOfValidpostSchoolpayTran" />
+          <s:element minOccurs="0" maxOccurs="1" name="notifyStudentIIU" type="tns:NotifyStudentIIU" />
+          <s:element minOccurs="0" maxOccurs="1" name="DSTVSubmitPayment" type="tns:DSTVSubmitPayment" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidpostUmemeUEDCLTranOverCounter" type="tns:ValidpostUmemeUEDCLTranOverCounter" />
+          <s:element minOccurs="0" maxOccurs="1" name="notifyPebuuAgentFloat" type="tns:NotifyPebuuAgentFloat" />
+          <s:element minOccurs="0" maxOccurs="1" name="validpostURAOTCTran" type="tns:ValidpostURAOTCTran" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostNWSCTran">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustArea" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtTxnDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblAmount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTxnRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPayMethod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostUmemeUEDCLTran">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtTxnDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblAmount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTxnRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPayMethod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostURAPOSTran">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtransactionid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtaxpayername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strprn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblAmount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpaymentdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfValidpostSchoolpayTran">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidpostSchoolpayTran" nillable="true" type="tns:ValidpostSchoolpayTran" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostSchoolpayTran">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="schoolpaytrandetails" type="tns:SchoolpayTrandetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="feeassociations" type="tns:ArrayOfBulkPaymentWrapper" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SchoolpayTrandetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstudentpaymentcode" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="stramount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strdepositor_phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strdepositor_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtran_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strmemo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strprocessDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfBulkPaymentWrapper">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="bulkPaymentWrapper" nillable="true" type="s2:bulkPaymentWrapper" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NotifyStudentIIU">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strprn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="chqno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtTxnDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="yrofstudy" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="sem" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="naration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtranref" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="DSTVSubmitPayment">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCust_name" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="stramount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="strinvoiceperiod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strproductcat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTxnRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPaymentDescription" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtxnDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PaymentProduct" type="tns:ArrayOfPaymentProduct" />
+          <s:element minOccurs="0" maxOccurs="1" name="strvendor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfPaymentProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PaymentProduct" nillable="true" type="s1:PaymentProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostUmemeUEDCLTranOverCounter">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtTxnDate" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblAmount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTxnRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPayMethod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPayType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NotifyPebuuAgentFloat">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustomerRef" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="strFloatAmount" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtxid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostURAOTCTran">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtransactionid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtaxpayername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strprn" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblAmount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpaymentdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strvaluedate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtin" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strbranchcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strchequeno" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strreason" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostCustomerTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostCustomerTransactionResult" type="tns:ArrayOfTxnResultz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostEutilTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ArrayOfValidposttranz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostEutilTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostEutilTransactionResult" type="tns:ArrayOfTxnResultz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostAgencyUtilTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ArrayOfValidposttranz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostAgencyUtilTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostAgencyUtilTransactionResult" type="tns:ArrayOfTxnResultz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostChequeproCharges">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ArrayOfValidposttranz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostChequeproChargesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostChequeproChargesResult" type="tns:ArrayOfTxnResultz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSCHPSTDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ValidSCHPST" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ValidSCHPST">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSchoolcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstartdate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strenddate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetSCHPSTDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSCHPSTDetailsResult" type="tns:ArrayOfAccountstatements" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAccountstatements">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Accountstatements" nillable="true" type="tns:Accountstatements" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Accountstatements">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requeststatusschpayst" type="tns:RequeststatusSchpayst" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountstatement" type="tns:ArrayOfAccountStatement" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RequeststatusSchpayst">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Account_No" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Branch_ID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Date_From" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Date_To" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="status" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfAccountStatement">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AccountStatement" nillable="true" type="tns:AccountStatement" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AccountStatement">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Trandate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TranId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Instrmnt_Type" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Instrmnt_Num" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Particulars" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="DebitAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CreditAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Currency" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Balance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Bal_Indicator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Remarks" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVendorBal">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:GetVendorBalRequest" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="GetVendorBalRequest">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetVendorBalResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetVendorBalResult" type="tns:ArrayOfValidGetVendorBalResult" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValidGetVendorBalResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidGetVendorBalResult" nillable="true" type="tns:ValidGetVendorBalResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidGetVendorBalResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="GetVendorBalResult" type="tns:GetVendorBalResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GetVendorBalResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strBalance" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstatus" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstatusdesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidateAgencyCustDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="initialdetails" type="tns:ArrayOfValidAgencyReqz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValidAgencyReqz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidAgencyReqz" nillable="true" type="tns:ValidAgencyReqz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidAgencyReqz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="validagencyquery" type="tns:ValidAgencyQuery" />
+          <s:element minOccurs="0" maxOccurs="1" name="validagencyquerynOnd" type="tns:ValidAgencyQueryNOND" />
+          <s:element minOccurs="0" maxOccurs="1" name="validateWaveCustomer" type="tns:ValidateWaveCustomer" />
+          <s:element minOccurs="0" maxOccurs="1" name="validateAccount" type="tns:ValidateAccount" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidAgencyQuery">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stracctid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAgentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidAgencyQueryNOND">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stracctid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAgentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strBankscode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidateWaveCustomer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stracctid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidateAccount">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Account" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Amount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="MSISDN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strusr" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpwd" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ValidateAgencyCustDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateAgencyCustDetailsResult" type="tns:ArrayOfAgencyCustDetailz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAgencyCustDetailz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="AgencyCustDetailz" nillable="true" type="tns:AgencyCustDetailz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgencyCustDetailz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requeststatus" type="tns:Requeststatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="agencyacctdetail" type="tns:AgencyAcctDetail" />
+          <s:element minOccurs="0" maxOccurs="1" name="agencyAcctDetailNONDFCU" type="tns:AgencyAcctDetailNONDFCU" />
+          <s:element minOccurs="0" maxOccurs="1" name="waveCustomerDetails" type="tns:WaveCustomerDetails" />
+          <s:element minOccurs="0" maxOccurs="1" name="validateAccountResponse" type="tns:ArrayOfValidateAccountResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgencyAcctDetail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="acct_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="acct_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AgencyAcctDetailNONDFCU">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="acct_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="acct_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="banksortcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WaveCustomerDetails">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="acct_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="acct_name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfValidateAccountResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidateAccountResponse" nillable="true" type="tns:ValidateAccountResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidateAccountResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="validateAccountResult" type="tns:ValidateAccountResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidateAccountResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountDetails" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostAgencyCustTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ArrayOfValidpostAgencyBanktranz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValidpostAgencyBanktranz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidpostAgencyBanktranz" nillable="true" type="tns:ValidpostAgencyBanktranz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostAgencyBanktranz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="validpostagencydepositTran" type="tns:ValidpostAgencyDepositTran" />
+          <s:element minOccurs="0" maxOccurs="1" name="validpostAgencyDepositTranNonD" type="tns:ValidpostAgencyDepositTranNonD" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostAgencyDepositTran">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stracct_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtTxnDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dblAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strnarration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTxnRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAgentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostAgencyDepositTranNonD">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stracct_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtTxnDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dblAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strnarration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTxnRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strAgentID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strBanksortcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostAgencyCustTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostAgencyCustTransactionResult" type="tns:ArrayOfTxnResultzAgencyBank" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTxnResultzAgencyBank">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TxnResultzAgencyBank" nillable="true" type="tns:TxnResultzAgencyBank" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TxnResultzAgencyBank">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requeststatus" type="tns:Requeststatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="agencybankdepositposttxnResult" type="tns:AgencyBankDepositPostTxnResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostSasulaTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ArrayOfValidpostSasulatranz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValidpostSasulatranz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidpostSasulatranz" nillable="true" type="tns:ValidpostSasulatranz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostSasulatranz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="validschpaypush2bank" type="tns:ValidSchpaypush2bank" />
+          <s:element minOccurs="0" maxOccurs="1" name="validmakpaypush2bank" type="tns:ValidMakpaypush2bank" />
+          <s:element minOccurs="0" maxOccurs="1" name="Validmobiamipush2bank" type="tns:ValidMOBIAMIpush2bank" />
+          <s:element minOccurs="0" maxOccurs="1" name="waveSettleTran" type="tns:WaveSettleTran" />
+          <s:element minOccurs="0" maxOccurs="1" name="ipn" type="tns:Ipn" />
+          <s:element minOccurs="0" maxOccurs="1" name="yopaySettleTran" type="tns:YopaySettleTran" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidSchpaypush2bank">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dateCreated" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strrecordid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strschoolCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strschoolName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strschoolpayRecieptNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsourcePaymentChannelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsourceTransactionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstudentCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstudentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidMakpaypush2bank">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dateCreated" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strrecordid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strschoolCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strschoolName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strschoolpayRecieptNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsourcePaymentChannelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsourceTransactionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstudentCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstudentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstudentTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCourse" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidMOBIAMIpush2bank">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dateCreated" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strrecordid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strschoolCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strschoolName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpegasusRecieptNumber" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsourcePaymentChannelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsourceTransactionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstudentCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstudentName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstudentTel" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCourse" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WaveSettleTran">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stracct_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtTxnDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dblAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strnarration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTxnRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSendername" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSourcePaymentChannelcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Ipn">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Networkref" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Externalref" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="MSISDN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="datetime" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Narrative" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="YopaySettleTran">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtTxnDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dblAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strnarration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTxnRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strMerchantID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsourcePaymentChannelCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsourceTransactionId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostSasulaTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostSasulaTransactionResult" type="tns:ArrayOfTxnResultzSasula" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTxnResultzSasula">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TxnResultzSasula" nillable="true" type="tns:TxnResultzSasula" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TxnResultzSasula">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requeststatus" type="tns:Requeststatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="agencybankdepositposttxnResult" type="tns:ValidSchpaypush2bankresponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="ipntResponse" type="tns:ArrayOfIpntResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="MerchantDepositPostTxnResult" type="tns:MerchantDepositPostTxnResult" />
+          <s:element minOccurs="0" maxOccurs="1" name="WaveDepositPostTxnResult" type="tns:WaveDepositPostTxnResult" />
+          <s:element minOccurs="0" maxOccurs="1" name="InterbankDepositPostTxnResult" type="tns:InterbankDepositPostTxnResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidSchpaypush2bankresponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="amountSettled" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtTxnDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strrecordid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsettlementReference" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strstrsettlementResultMessage" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="strstrsettlementSuccessful" type="s:boolean" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfIpntResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ipntResponse" nillable="true" type="tns:ipntResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ipntResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ipnResult" type="tns:ipnResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ipnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusMessage" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MerchantDepositPostTxnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="acct_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionid" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="WaveDepositPostTxnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="acct_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionid" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InterbankDepositPostTxnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="acct_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="StatusDesc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionid" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostSettlementTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ArrayOfValidpostSasulatranz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostSettlementTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostSettlementTransactionResult" type="tns:ArrayOfTxnResultzSasula" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PostNSSFMobiPaytTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ArrayOfValidpostNSSFMobiPaytranz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValidpostNSSFMobiPaytranz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidpostNSSFMobiPaytranz" nillable="true" type="tns:ValidpostNSSFMobiPaytranz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostNSSFMobiPaytranz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="validpostnssfmobipayTran" type="tns:ValidpostNSSFMobiPayTran" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostNSSFMobiPayTran">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strUtilityCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strtrn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strCustPhone" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dtTxnDate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="dblAmount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpaywaytran" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpaycat" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostNSSFMobiPaytTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostNSSFMobiPaytTransactionResult" type="tns:ArrayOfTxnResultzNSSFMobiPay" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTxnResultzNSSFMobiPay">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TxnResultzNSSFMobiPay" nillable="true" type="tns:TxnResultzNSSFMobiPay" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TxnResultzNSSFMobiPay">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requeststatus" type="tns:Requeststatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="nssfmobipayposttxnResult" type="tns:NSSFMobiPayPostTxnResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="NSSFMobiPayPostTxnResult">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="paywaytran" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="trn" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="error_Code" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AFA">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ArrayOfValidpostFlo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValidpostFlo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ValidpostFlo" nillable="true" type="tns:ValidpostFlo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostFlo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="mCashFloatLoadReq" type="tns:MCashFloatLoadReq" />
+          <s:element minOccurs="0" maxOccurs="1" name="interswitchFloatLoadReq" type="tns:InterswitchFloatLoadReq" />
+          <s:element minOccurs="0" maxOccurs="1" name="spiltABIncomeWithReq" type="tns:SpiltABIncomeWithReq" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MCashFloatLoadReq">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strutilitycode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="anmid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="agentid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txndate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transref" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="escrow_acc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fin_tran" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="escrow_narration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InterswitchFloatLoadReq">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strutilitycode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="anmid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="agentid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txndate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transref" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="escrow_acc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fin_tran" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="escrow_narration" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="custemail" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="custmobile" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SpiltABIncomeWithReq">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strutilitycode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="anmid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="agentid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="amount" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="branch" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="txndate" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transref" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="escrow_acc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="fin_tran" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="escrow_narration" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="rcre_time" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strSignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="AFAResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AFAResult" type="tns:ArrayOfTxnResultzFlo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTxnResultzFlo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TxnResultzFlo" nillable="true" type="tns:TxnResultzFlo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TxnResultzFlo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="mCashFloatLoadResponse" type="tns:MCashFloatLoadResponse" />
+          <s:element minOccurs="0" maxOccurs="1" name="interswitchFloatLoadResponse" type="tns:InterswitchFloatLoadResponse" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="MCashFloatLoadResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="transactionid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="errorcode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="error" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="InterswitchFloatLoadResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="responseMessage" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="responseCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="rechargePIN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transactionRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="transferCode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="customer" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostBufferFailedTransaction">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ArrayOfValidpostbuffertranz" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfValidpostbuffertranz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Validpostbuffertranz" nillable="true" type="tns:Validpostbuffertranz" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Validpostbuffertranz">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="ValidpostbufferFailedABTran" type="tns:ValidpostbufferFailedABTran" />
+          <s:element minOccurs="0" maxOccurs="1" name="ValidpostbufferFailedAIMIS" type="tns:ValidpostbufferFailedAIMIS" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostbufferFailedABTran">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strutilitycode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Custname" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Custtype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPhoneNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblAmount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTxnRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strNarrative" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strPayType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stragentid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stranmid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strbranchacc" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stritempost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="straudittracenum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ValidpostbufferFailedAIMIS">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="strutilitycode" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="agent_id" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="recordid" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="dblAmount" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="strTxnRef" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="stritempost" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="straudittracenum" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strpaymentmethod" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendor" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strVendorPassword" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="strsignature" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="PostBufferFailedTransactionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostBufferFailedTransactionResult" type="tns:ArrayOfTxnResultzFailedBuffer" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfTxnResultzFailedBuffer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="TxnResultzFailedBuffer" nillable="true" type="tns:TxnResultzFailedBuffer" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="TxnResultzFailedBuffer">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="requeststatus" type="tns:Requeststatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="agencybankdepositposttxnResult" type="tns:AgencyBankDepositPostTxnResult" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SpiltABIncomeWith">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ArrayOfValidpostFlo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SpiltABIncomeWithResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SpiltABIncomeWithResult" type="tns:ArrayOfTxnResultzFlo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SpiltABShellIncomeWith">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="posttrandetails" type="tns:ArrayOfValidpostFlo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SpiltABShellIncomeWithResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SpiltABShellIncomeWithResult" type="tns:ArrayOfTxnResultzFlo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://datacontracts.multichoice.co.za/SelfCare">
+      <s:complexType name="GetSmartQuoteResponse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="BasketId" type="s:unsignedInt" />
+          <s:element minOccurs="1" maxOccurs="1" name="QuotePeriod" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="PaymentType" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Profile" nillable="true" type="s1:RetailProfile" />
+          <s:element minOccurs="1" maxOccurs="1" name="Product" nillable="true" type="s1:ArrayOfRetailProduct" />
+          <s:element minOccurs="1" maxOccurs="1" name="Quote" nillable="true" type="s1:RetailQuote" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Message" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="BusinessUnit" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RetailProfile">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="FirstName" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="LastName" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Initial" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:unsignedInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="CustomerNumber" type="s:unsignedInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="accountStatus" type="s1:AccountStatus" />
+          <s:element minOccurs="0" maxOccurs="1" name="HasBoxOffice" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="InvoicePeriod" type="s:unsignedInt" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalBalance" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="AccountStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="UnKnown" />
+          <s:enumeration value="Open" />
+          <s:enumeration value="Closed" />
+          <s:enumeration value="Suspended" />
+          <s:enumeration value="NewAccount" />
+          <s:enumeration value="BadDebtWriteOff" />
+          <s:enumeration value="Fraudulent" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfRetailProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="RetailProduct" nillable="true" type="s1:RetailProduct" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RetailProduct">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Price" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductKey" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="ProductName" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ActiveOnAccount" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="DisconnectedOnAccount" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductOnRequest" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="AddOn" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Upgrade" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="Downgrade" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="BoxOffice" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="Currency" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="WebLogo" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="RetailQuote">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="DueDate" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductsTotalAmount" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="BalanceDue" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="TotalAmount" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="AvailableProduct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="currency" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="defaultCuurencyCode" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="defaultcurrencyproductPrice" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="hasCustomer" type="s:boolean" />
+          <s:element minOccurs="1" maxOccurs="1" name="productCode" nillable="true" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="productDesc" nillable="true" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="productPrice" type="s:decimal" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PaymentProduct">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductUserKey" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://webservices.feesapp.jmsoft.com/">
+      <s:complexType name="bulkPaymentWrapper">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="feeId" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="feeMemo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" form="unqualified" name="tenderedAmount" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckTransaction" />
+  </wsdl:message>
+  <wsdl:message name="CheckTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckTransactionABSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckTransactionAB" />
+  </wsdl:message>
+  <wsdl:message name="CheckTransactionABSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckTransactionABResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmABWithdrawalTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:ConfirmABWithdrawalTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmABWithdrawalTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmABWithdrawalTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:ReverseTransaction" />
+  </wsdl:message>
+  <wsdl:message name="ReverseTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:ReverseTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCustomerDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateCustomerDetails" />
+  </wsdl:message>
+  <wsdl:message name="ValidateCustomerDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateCustomerDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostCustomerTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostCustomerTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostCustomerTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostCustomerTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostEutilTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostEutilTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostEutilTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostEutilTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostAgencyUtilTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostAgencyUtilTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostAgencyUtilTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostAgencyUtilTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostChequeproChargesSoapIn">
+    <wsdl:part name="parameters" element="tns:PostChequeproCharges" />
+  </wsdl:message>
+  <wsdl:message name="PostChequeproChargesSoapOut">
+    <wsdl:part name="parameters" element="tns:PostChequeproChargesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSCHPSTDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetSCHPSTDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetSCHPSTDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetSCHPSTDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetVendorBalSoapIn">
+    <wsdl:part name="parameters" element="tns:GetVendorBal" />
+  </wsdl:message>
+  <wsdl:message name="GetVendorBalSoapOut">
+    <wsdl:part name="parameters" element="tns:GetVendorBalResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAgencyCustDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateAgencyCustDetails" />
+  </wsdl:message>
+  <wsdl:message name="ValidateAgencyCustDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateAgencyCustDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostAgencyCustTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostAgencyCustTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostAgencyCustTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostAgencyCustTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostSasulaTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostSasulaTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostSasulaTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostSasulaTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostSettlementTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostSettlementTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostSettlementTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostSettlementTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostNSSFMobiPaytTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostNSSFMobiPaytTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostNSSFMobiPaytTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostNSSFMobiPaytTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="AFASoapIn">
+    <wsdl:part name="parameters" element="tns:AFA" />
+  </wsdl:message>
+  <wsdl:message name="AFASoapOut">
+    <wsdl:part name="parameters" element="tns:AFAResponse" />
+  </wsdl:message>
+  <wsdl:message name="PostBufferFailedTransactionSoapIn">
+    <wsdl:part name="parameters" element="tns:PostBufferFailedTransaction" />
+  </wsdl:message>
+  <wsdl:message name="PostBufferFailedTransactionSoapOut">
+    <wsdl:part name="parameters" element="tns:PostBufferFailedTransactionResponse" />
+  </wsdl:message>
+  <wsdl:message name="SpiltABIncomeWithSoapIn">
+    <wsdl:part name="parameters" element="tns:SpiltABIncomeWith" />
+  </wsdl:message>
+  <wsdl:message name="SpiltABIncomeWithSoapOut">
+    <wsdl:part name="parameters" element="tns:SpiltABIncomeWithResponse" />
+  </wsdl:message>
+  <wsdl:message name="SpiltABShellIncomeWithSoapIn">
+    <wsdl:part name="parameters" element="tns:SpiltABShellIncomeWith" />
+  </wsdl:message>
+  <wsdl:message name="SpiltABShellIncomeWithSoapOut">
+    <wsdl:part name="parameters" element="tns:SpiltABShellIncomeWithResponse" />
+  </wsdl:message>
+  <wsdl:portType name="webapiSoap">
+    <wsdl:operation name="CheckTransaction">
+      <wsdl:input message="tns:CheckTransactionSoapIn" />
+      <wsdl:output message="tns:CheckTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransactionAB">
+      <wsdl:input message="tns:CheckTransactionABSoapIn" />
+      <wsdl:output message="tns:CheckTransactionABSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmABWithdrawalTransaction">
+      <wsdl:input message="tns:ConfirmABWithdrawalTransactionSoapIn" />
+      <wsdl:output message="tns:ConfirmABWithdrawalTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <wsdl:input message="tns:ReverseTransactionSoapIn" />
+      <wsdl:output message="tns:ReverseTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCustomerDetails">
+      <wsdl:input message="tns:ValidateCustomerDetailsSoapIn" />
+      <wsdl:output message="tns:ValidateCustomerDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostCustomerTransaction">
+      <wsdl:input message="tns:PostCustomerTransactionSoapIn" />
+      <wsdl:output message="tns:PostCustomerTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostEutilTransaction">
+      <wsdl:input message="tns:PostEutilTransactionSoapIn" />
+      <wsdl:output message="tns:PostEutilTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostAgencyUtilTransaction">
+      <wsdl:input message="tns:PostAgencyUtilTransactionSoapIn" />
+      <wsdl:output message="tns:PostAgencyUtilTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostChequeproCharges">
+      <wsdl:input message="tns:PostChequeproChargesSoapIn" />
+      <wsdl:output message="tns:PostChequeproChargesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSCHPSTDetails">
+      <wsdl:input message="tns:GetSCHPSTDetailsSoapIn" />
+      <wsdl:output message="tns:GetSCHPSTDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVendorBal">
+      <wsdl:input message="tns:GetVendorBalSoapIn" />
+      <wsdl:output message="tns:GetVendorBalSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAgencyCustDetails">
+      <wsdl:input message="tns:ValidateAgencyCustDetailsSoapIn" />
+      <wsdl:output message="tns:ValidateAgencyCustDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostAgencyCustTransaction">
+      <wsdl:input message="tns:PostAgencyCustTransactionSoapIn" />
+      <wsdl:output message="tns:PostAgencyCustTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostSasulaTransaction">
+      <wsdl:input message="tns:PostSasulaTransactionSoapIn" />
+      <wsdl:output message="tns:PostSasulaTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostSettlementTransaction">
+      <wsdl:input message="tns:PostSettlementTransactionSoapIn" />
+      <wsdl:output message="tns:PostSettlementTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostNSSFMobiPaytTransaction">
+      <wsdl:input message="tns:PostNSSFMobiPaytTransactionSoapIn" />
+      <wsdl:output message="tns:PostNSSFMobiPaytTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AFA">
+      <wsdl:input message="tns:AFASoapIn" />
+      <wsdl:output message="tns:AFASoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PostBufferFailedTransaction">
+      <wsdl:input message="tns:PostBufferFailedTransactionSoapIn" />
+      <wsdl:output message="tns:PostBufferFailedTransactionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SpiltABIncomeWith">
+      <wsdl:input message="tns:SpiltABIncomeWithSoapIn" />
+      <wsdl:output message="tns:SpiltABIncomeWithSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SpiltABShellIncomeWith">
+      <wsdl:input message="tns:SpiltABShellIncomeWithSoapIn" />
+      <wsdl:output message="tns:SpiltABShellIncomeWithSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="webapiSoap" type="tns:webapiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckTransaction">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/CheckTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransactionAB">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/CheckTransactionAB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmABWithdrawalTransaction">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/ConfirmABWithdrawalTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/ReverseTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCustomerDetails">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/ValidateCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostCustomerTransaction">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/PostCustomerTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostEutilTransaction">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/PostEutilTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAgencyUtilTransaction">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/PostAgencyUtilTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostChequeproCharges">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/PostChequeproCharges" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSCHPSTDetails">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/GetSCHPSTDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVendorBal">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/GetVendorBal" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAgencyCustDetails">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/ValidateAgencyCustDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAgencyCustTransaction">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/PostAgencyCustTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSasulaTransaction">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/PostSasulaTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSettlementTransaction">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/PostSettlementTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostNSSFMobiPaytTransaction">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/PostNSSFMobiPaytTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AFA">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/AFA" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostBufferFailedTransaction">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/PostBufferFailedTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpiltABIncomeWith">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/SpiltABIncomeWith" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpiltABShellIncomeWith">
+      <soap:operation soapAction="http://www.dfcugroup.com/s/SpiltABShellIncomeWith" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="webapiSoap12" type="tns:webapiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckTransaction">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/CheckTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckTransactionAB">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/CheckTransactionAB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ConfirmABWithdrawalTransaction">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/ConfirmABWithdrawalTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReverseTransaction">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/ReverseTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateCustomerDetails">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/ValidateCustomerDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostCustomerTransaction">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/PostCustomerTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostEutilTransaction">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/PostEutilTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAgencyUtilTransaction">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/PostAgencyUtilTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostChequeproCharges">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/PostChequeproCharges" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSCHPSTDetails">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/GetSCHPSTDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetVendorBal">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/GetVendorBal" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateAgencyCustDetails">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/ValidateAgencyCustDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostAgencyCustTransaction">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/PostAgencyCustTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSasulaTransaction">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/PostSasulaTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostSettlementTransaction">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/PostSettlementTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostNSSFMobiPaytTransaction">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/PostNSSFMobiPaytTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AFA">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/AFA" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostBufferFailedTransaction">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/PostBufferFailedTransaction" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpiltABIncomeWith">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/SpiltABIncomeWith" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SpiltABShellIncomeWith">
+      <soap12:operation soapAction="http://www.dfcugroup.com/s/SpiltABShellIncomeWith" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="webapi">
+    <wsdl:port name="webapiSoap" binding="tns:webapiSoap">
+      <soap:address location="https://testapigateway.dfcugroup.com/esbgatewaysit/webapi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="webapiSoap12" binding="tns:webapiSoap12">
+      <soap12:address location="https://testapigateway.dfcugroup.com/esbgatewaysit/webapi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
