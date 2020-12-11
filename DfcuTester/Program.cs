@@ -34,11 +34,11 @@ namespace DfcuTester
             //string ApiPassword = "A!@##*9900K";
 
             //FINSERVICE NWSC INQUIRE
-            //string utilityCode = "002";
-            //string utilityArea = "KAMPALA";
-            //string custRef = "2170065";
-            //string ApiUsername = "FINWEB";
-            //string ApiPassword = "A!@##*9900K";
+            string utilityCode = "002";
+            string utilityArea = "KAMPALA";
+            string custRef = "2170065";
+            string ApiUsername = "FINWEB";
+            string ApiPassword = "A!@##*9900K";
 
             ////FINSERVICE ZEEPAY INQUIRE
             //string utilityCode = "ZEEPAY";
@@ -48,11 +48,11 @@ namespace DfcuTester
             //string ApiPassword = "A!@##*9900K";
 
             //FINSERVICE AIRTEL FLOAT DEPOSIT INQUIRE
-            string utilityCode = "AIRTELFLTDEP";
-            string utilityArea = "";
-            string custRef = "707526984";
-            string ApiUsername = "FINWEB";
-            string ApiPassword = "A!@##*9900K";
+            //string utilityCode = "AIRTELFLTDEP";
+            //string utilityArea = "";
+            //string custRef = "707526984";
+            //string ApiUsername = "FINWEB";
+            //string ApiPassword = "A!@##*9900K";
 
             //FINSERVICE TUCKSEE INQUIRE
             //string utilityCode = "TUCKSEE";
@@ -92,7 +92,7 @@ namespace DfcuTester
             //FINSERVICE UMEME INQUIRE
             //string utilityCode = "001";
             //string utilityArea = "";
-            //string custRef = "04253657003";//2018113015235875544  //E22030312151954 E22030312159226 P10000310072735 P10000310072736 Other Payment Types
+            //string custRef = "04255577837";//2018113015235875544  //E22030312151954 E22030312159226 P10000310072735 P10000310072736 Other Payment Types
             //string ApiUsername = "FINWEB";
             //string ApiPassword = "A!@##*9900K";
 
