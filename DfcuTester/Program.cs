@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using DfcuTester.dfcu;
 //using APIDEncrypt;
 
+
 namespace DfcuTester
 {
     class Program
@@ -33,12 +34,34 @@ namespace DfcuTester
             //string ApiUsername = "FINWEB";
             //string ApiPassword = "A!@##*9900K";
 
-            //FINSERVICE NWSC INQUIRE
-            string utilityCode = "002";
-            string utilityArea = "KAMPALA";
-            string custRef = "2170065";
-            string ApiUsername = "FINWEB";
-            string ApiPassword = "A!@##*9900K";
+            ////FINSERVICE NWSC INQUIRE
+            //string utilityCode = "002";
+            //string utilityArea = "KAMPALA";
+            //string custRef = "2170065";
+            //string ApiUsername = "FINWEB";
+            //string ApiPassword = "A!@##*9900K";
+
+            ////FINSERVICE NWSC INQUIRE
+            //string utilityCode = "UDB";
+            //string utilityArea = "";
+            //string custRef = "1001040160010"; //Correct Loan Account
+            ////string custRef = "1001040010"; //Wrong Loan Account
+            //string ApiUsername = "FINWEB";
+            //string ApiPassword = "A!@##*9900K";
+
+
+            //string decUname = "ubpayapp";
+            //string decpaaswd = "D7@n0!@80o2";
+
+            //Encoding iso = Encoding.GetEncoding("ISO-8859-1");
+            //Encoding utf8 = Encoding.UTF8;
+            //byte[] utfBytes = utf8.GetBytes(decUname + ":" + decpaaswd);
+            //byte[] isoBytes = Encoding.Convert(utf8, iso, utfBytes);
+            ////string msg = iso.GetString(isoBytes);
+            //string svcCredentials = Convert.ToBase64String(isoBytes);
+
+
+            //string pause = "";
 
             ////FINSERVICE ZEEPAY INQUIRE
             //string utilityCode = "ZEEPAY";
@@ -141,13 +164,14 @@ namespace DfcuTester
 
             //FINSERVICE UEDCL INQUIRE
             //string utilityCode = "UEDCL";
-            //string phone = "";
-            //string custRef = "04040404255";//2018113015235875544  //E22030312151954 E22030312159226 P10000310072735 P10000310072736 Other Payment Types
+            //string phone = "256779653858";
+            //string custRef = "111636991";//2018113015235875544  //E22030312151954 E22030312159226 P10000310072735 P10000310072736 Other Payment Types
             //string ApiUsername = "FINWEB";
             //string ApiPassword = "A!@##*9900K";
-            //string utilityArea = phone;
+            //string tranType = "Bill Payment";
+            //string utilityArea = phone + "@" + tranType;
 
-            string result = finclient.InquireUtility(utilityCode, utilityArea, custRef, ApiUsername, ApiPassword);
+            //string result = finclient.InquireUtility(utilityCode, utilityArea, custRef, ApiUsername, ApiPassword);
 
             //FINSERVICE NWSC NOTIFY
             //string strUtilityCode = "002";
@@ -258,20 +282,20 @@ namespace DfcuTester
             //string reserve5 = "STUDENT NAMES";
 
             ////FINSERVICE UEDCL PAYMENT NOTIFY
-            //string strUtilityCode = "UEDCL";
-            //string strcustomerRef = "04040404255";
-            //string strcustomerArea = "";
-            //string strphone = "0779653858";
-            //string amount = "70000";
-            //string reference = "UBPAY_04040404255_73295";
-            //string ApiUsername = "FINWEB";
-            //string ApiPassword = "A!@##*9900K";
-            //string paymentType = "2";
-            //string reserve1 = paymentType; 
-            //string reserve2 = "";
-            //string reserve3 = "";
-            //string reserve4 = "";
-            //string reserve5 = "";
+            string strUtilityCode = "UEDCL";
+            string strcustomerRef = "111636991";
+            string strcustomerArea = "";
+            string strphone = "0779653858";
+            string amount = "70000";
+            string reference = "111636991_UEDCL_45345";
+            string ApiUsername = "FINWEB";
+            string ApiPassword = "A!@##*9900K";
+            string paymentType = "Bill Payment";
+            string reserve1 = paymentType;
+            string reserve2 = "2202104131704043131";//Uedlid
+            string reserve3 = "13042021063330";//Processid
+            string reserve4 = "";
+            string reserve5 = "";
 
             ////FINSERVICE PAYWAY PAYMENT NOTIFY
             //string strUtilityCode = "PAYWAY";
@@ -306,7 +330,7 @@ namespace DfcuTester
             //string reserve5 = "";
 
 
-            //string result2 = finclient.PostUtilityTransaction(strUtilityCode, strcustomerArea, strcustomerRef, ApiUsername, ApiPassword, strphone, amount, reference, paymentType, reserve1, reserve2, reserve3, reserve4, reserve5);
+            string result2 = finclient.PostUtilityTransaction(strUtilityCode, strcustomerArea, strcustomerRef, ApiUsername, ApiPassword, strphone, amount, reference, paymentType, reserve1, reserve2, reserve3, reserve4, reserve5);
 
             ////string input = "HAHAHA";
             //string result = finclient.postToMWare(input);

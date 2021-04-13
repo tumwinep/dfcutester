@@ -39,3 +39,4 @@ D:\New_Work\Repos\dfcutester\DfcuTester\bin\Debug\DfcuTester.pdb
 D:\New_Work\Repos\dfcutester\DfcuTester\obj\x86\Debug\DfcuTester.csprojAssemblyReference.cache
 D:\New_Work\Repos\dfcutester\DfcuTester\obj\x86\Debug\DfcuTester.exe
 D:\New_Work\Repos\dfcutester\DfcuTester\obj\x86\Debug\DfcuTester.pdb
+D:\New_Work\Repos\dfcutester\DfcuTester\obj\x86\Debug\DfcuTester.csproj.CoreCompileInputs.cache
